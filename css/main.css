@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brand-color1: #1a7383;
+    --brand-color2: #37c391;
+    --brand-color3: #bff2de;
+
+    --black: #20252c;
+    --white: #f0f2f4;
+    --grey: light-dark(#666, #ccc);
+    --background-color: light-dark(#fff, var(--black));
+    --text-color: light-dark(var(--black), var(--white));
+    
+    --light-grey: #aaaaaa80;
+    --box-shadow: 1px 1px 4px var(--light-grey);
+    --border-radius: 12px;
+    
+    color-scheme: light dark;
+}
+
+html { scroll-behavior: smooth; }
+
+.dark { color-scheme: dark; }
+
+body {
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-color);
+
+    background: var(--background-color);
+    background-image: radial-gradient(circle at 1px 1px, var(--light-grey) 1px, transparent 0);
+    background-size: 30px 30px;
+    background-attachment: fixed;
+
+    overflow-y: scroll;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+p, span { font-size: 14px; }
+
+ul, ol { list-style: none; }
+
+.hidden { display: none; }
+/* ----------- */
+
+/* LIGHT/DARK MODE TOGGLE */
+#themeToggle {
+    border: 0;
+    background: none;
+    cursor: pointer;
+    transition: transform .5s ease;
+
+    & .sun { fill: light-dark(#fff, transparent); }
+    & .moon { fill: light-dark(transparent, #fff); }
+}
+/* ----------- */
+
+/* HEADER & FOOTER */
+header, footer {
+    & figure {
+        --size: 48px;
+        width: var(--size);
+        height: var(--size);
+
+        & .virginiadevs-logo {
+            width: 100%;
+        }
+    }
+}
+
+/* HEADER */
+header {
+    padding: 10px 20px 80px;
+    margin-bottom: 1.5rem;
+    background:
+        linear-gradient(to bottom,  
+            color-mix(in srgb, var(--background-color), transparent 100%) 0%, 
+            color-mix(in srgb, var(--background-color), transparent 50%) 45%, 
+            color-mix(in srgb, var(--background-color), transparent 20%) 70%,
+            color-mix(in srgb, var(--background-color), transparent 0%) 100%),
+        linear-gradient(to right, var(--brand-color1), var(--brand-color2));
+
+    & .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* FOOTER */
+footer {
+    margin: 6rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: .5rem;
+
+    & figure {
+        background: var(--background-color);
+    }
+}
+/* ----------- */
+
+/* MAIN CONTENT */
+main {
+    margin: .5rem 1.5rem;
+}
+/* ----------- */
+
+/* ABOUT */
+#about {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & .about-img {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & figure {
+            width: 100px;
+            height: 100px;
+            transform: scaleX(-1);
+            border: 1px solid var(--light-grey);
+            border-radius: var(--border-radius);
+            background: var(--background-color);
+            box-shadow: -3px 3px 0px 0px var(--light-grey);
+
+            & img {
+                width: 100%;
+                scale: 1.1;
+            }
+
+            &:hover {
+                transform: scaleX(-1) translate(-3px, 3px);
+                box-shadow: none;
+            }
+        }
+    }
+
+    & .about-info {
+
+        & h2 {
+            font-weight: 600;
+            line-height: 1.1;
+            color: light-dark(var(--brand-color1), var(--brand-color2));
+            margin: 0 0 10px;
+        }
+
+        & > span {
+            color: var(--grey);
+        }
+
+        & p {
+            margin: .5rem 0 1rem;
+        }
+    }
+}
+/* ----------- */
+
+/* LINKS */
+#links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+fieldset {
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    border: transparent;
+
+    & legend {
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+}
+
+.icon-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1.5rem;
+    width: 100%;
+    height: 3rem;
+
+    --gradient: linear-gradient(to right, var(--brand-color1), var(--brand-color2)) border-box;
+    --gradient-light: linear-gradient(var(--background-color), var(--background-color)) padding-box;
+    background: var(--gradient-light), var(--gradient);
+
+    border: 3px solid transparent;
+    border-radius: var(--border-radius);
+    box-shadow: 3px 3px 0px 0px var(--light-grey);
+
+    &:hover {
+        transform: translate(3px, 3px);
+        box-shadow: none;
+    }
+}
+
+.linkedin-logo path:last-child {
+    fill: var(--background-color)
+}
+/* ----------- */
