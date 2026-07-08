@@ -31,12 +31,10 @@ body {
     font-size: 14px;
     line-height: 1.5;
     color: var(--text-color);
-
     background: var(--background-color);
     background-image: radial-gradient(circle at 1px 1px, var(--light-grey) 1px, transparent 0);
     background-size: 30px 30px;
     background-attachment: fixed;
-
     overflow-y: scroll;
 }
 
@@ -64,23 +62,22 @@ ul, ol { list-style: none; }
 }
 /* ----------- */
 
-/* HEADER & FOOTER */
-header, footer {
-    & figure {
-        --size: 48px;
-        width: var(--size);
-        height: var(--size);
+/* LOGOS */
+.my-logo {
+    --size: 48px;
+    width: var(--size);
+    height: var(--size);
 
-        & .virginiadevs-logo {
-            width: 100%;
-        }
+    & img {
+        width: 100%;
     }
 }
 
 /* HEADER */
 header {
-    padding: 10px 20px 80px;
-    margin-bottom: 1.5rem;
+    /*padding: 10px 20px 80px;
+    margin-bottom: 1.5rem;*/
+    padding: .7rem 1rem 110px;
     background:
         linear-gradient(to bottom,  
             color-mix(in srgb, var(--background-color), transparent 100%) 0%, 
@@ -88,12 +85,6 @@ header {
             color-mix(in srgb, var(--background-color), transparent 20%) 70%,
             color-mix(in srgb, var(--background-color), transparent 0%) 100%),
         linear-gradient(to right, var(--brand-color1), var(--brand-color2));
-
-    & .header-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
 }
 
 /* FOOTER */
@@ -114,11 +105,20 @@ footer {
 /* MAIN CONTENT */
 main {
     margin: .5rem 1.5rem;
+    position: relative;
+    margin-top: -110px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 /* ----------- */
 
 /* ABOUT */
 #about {
+    margin-top: 110px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -208,12 +208,18 @@ fieldset {
     box-shadow: 3px 3px 0px 0px var(--light-grey);
 
     &:hover {
+        background: var(--gradient);
+        color: var(--white);
         transform: translate(3px, 3px);
         box-shadow: none;
     }
 }
 
+.linkedin-logo path:first-child {
+    fill: var(--text-color);
+}
+
 .linkedin-logo path:last-child {
-    fill: var(--background-color)
+    fill: var(--background-color);
 }
 /* ----------- */
