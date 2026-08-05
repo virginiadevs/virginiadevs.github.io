@@ -17,7 +17,7 @@
     
     --light-grey: #aaaaaa80;
     --box-shadow: 1px 1px 4px var(--light-grey);
-    --border-radius: 12px;
+    --border-radius: 8px;
     
     color-scheme: light dark;
 }
