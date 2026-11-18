@@ -167,7 +167,7 @@ main {
     gap: 1rem;
     padding-left: 1.5rem;
     width: 100%;
-    height: 3rem;
+    height: 52px;
 
     --gradient: linear-gradient(to right, var(--brand-color1), var(--brand-color2)) border-box;
     --gradient-light: linear-gradient(var(--background-color), var(--background-color)) padding-box;
@@ -183,6 +183,8 @@ main {
         transform: translate(3px, 3px);
         box-shadow: none;
     }
+
+    & span { font-size: 16px; font-weight: 500; }
 }
 /* ----------- */
 
